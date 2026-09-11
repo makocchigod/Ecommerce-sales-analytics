@@ -6,11 +6,6 @@ def customers_cleared():
     c = c.drop_duplicates().reset_index(drop=True)
     return c
 
-def employee_cleared():
-    e = download_employees()
-    e = e.drop_duplicates().dropna().reset_index(drop=True)
-    return e
-
 def orders_cleared():
     o = download_orders()
     o['quantity'] = o['quantity'].astype('Int64')
@@ -22,5 +17,4 @@ def products_cleared():
     p = download_products()
     p = p.drop_duplicates().reset_index(drop=True)
     p['category'] = p['product_name'].str.split().str[0] + "s"
-    print(p)
     return p

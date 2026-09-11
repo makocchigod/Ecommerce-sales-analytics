@@ -4,10 +4,6 @@ def download_customers():
     customers = pd.read_csv('../data/customers.csv')
     return customers
 
-def download_employees():
-    employees = pd.read_csv('../data/employees.csv')
-    return employees
-
 def download_orders():
     orders = pd.read_csv('../data/orders.csv')
     return orders
